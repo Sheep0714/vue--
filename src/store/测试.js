@@ -18,12 +18,16 @@ Vue.use(Vuex)
 // -this.$store.commit('mutation方法名字',接收传参)
 export default new Vuex.Store({
   state: {
-    tokenObj: {}
+    count: 0
   },
-  getters: {},
+  getters: {
+    bigNum(state) {
+      return state.count * 10
+    }
+  },
   mutations: {
-    SetToken(state, token) {
-      state.tokenObj = token
+    SetConst(state, num) {
+      state.count += num
     }
   }
 })
