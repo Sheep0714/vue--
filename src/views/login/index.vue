@@ -74,14 +74,14 @@ export default {
       // loading
       // message:提示文案
       // forbidC1ick禁止点击
-      // duration展示的时长.为B,一直展示
+      // duration展示的时长.为0,一直展示
       this.loading()
       try {
         const { data } = await login(this.mobile, this.code)
         console.log(data)
         // 获取token并存入vuex
         this.SetToken(data.data)
-        this.$router.push('/profile')
+        this.$router.push('/my')
         // 成功提示
         this.$toast.success(data.message)
       } catch (error) {
