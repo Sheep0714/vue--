@@ -30,6 +30,7 @@ v-for="(i,index) in item.cover.images"
 </template>
 
 <script>
+import dayjs from '@/utils/dayjs'
 export default {
   props: {
     item: {
@@ -41,7 +42,7 @@ export default {
     lable() {
       /*eslint-disable*/
       const { aut_name, comm_count, pubdate } = this.item
-      return `${aut_name}${comm_count}${pubdate}`
+      return `${aut_name}${comm_count}评论 ${dayjs(pubdate).fromNow()}`
     }
   }
 }

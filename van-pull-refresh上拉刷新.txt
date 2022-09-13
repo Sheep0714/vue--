@@ -1,0 +1,7 @@
+van-pull-refresh 嵌套 van-list组件
+
+v-model="isLoading" 绑定状态 默认是false 下拉后变为true
+
+@refresh="onRefresh" 绑定触发事件
+
+逻辑：当isLoading变为true时，onRefresh时间会自动触发，使用unshit把获取到的数据添加在渲染的最前面

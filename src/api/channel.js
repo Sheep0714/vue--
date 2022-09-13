@@ -6,3 +6,9 @@ export const getChannelApi = () => {
     url: '/v1_0/user/channels'
   })
 }
+
+export const getAllChannelApi = () => {
+  return request({
+    url: '/v1_0/channels'
+  })
+}

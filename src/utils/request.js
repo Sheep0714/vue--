@@ -1,3 +1,9 @@
+// 配置axios请求
+// 1.下载引入axios yarn add axios
+// 2.克隆axios
+// 3.暴露克隆的request
+
+// 引入axios
 import axios from 'axios'
 import store from '@/store'
 // 克隆axios
@@ -5,6 +11,7 @@ const request = axios.create({
   timeout: 3000,
   baseURL: 'http://toutiao.itheima.net'
 })
+
 // 请求拦截器：请求做些事情
 // config是每一次请求的配置对象
 request.interceptors.request.use(
@@ -26,5 +33,5 @@ request.interceptors.request.use(
     console.log(error)
   }
 )
-
+// 暴露克隆的request
 export default request
