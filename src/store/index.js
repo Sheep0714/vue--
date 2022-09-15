@@ -38,14 +38,15 @@ export default new Vuex.Store({
   plugins: [
     createPersistedState({
       key: 'HEIMA-TOUTIAO',
-      reducer({ tokenObj, myChannels }) {
-        return { tokenObj, myChannels }
+      reducer({ tokenObj, myChannels, histories }) {
+        return { tokenObj, myChannels, histories }
       }
     })
   ],
   state: {
     tokenObj: {},
-    myChannels: []
+    myChannels: [],
+    histories: []
   },
   getters: {
     isLogin(state) {
@@ -58,6 +59,14 @@ export default new Vuex.Store({
     },
     SetMyChannels(state, item) {
       state.myChannels = item
+    },
+    /**
+     *
+     *
+     * @param {*} histories 删除或者添加后的新的搜索历史
+     */
+    SetHistories(state, histories) {
+      state.histories = histories
     }
   }
 })

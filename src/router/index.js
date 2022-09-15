@@ -18,6 +18,8 @@ const routes = [
         path: '/my',
         component: () => import('@/views/my')
       },
+      // 懒加载的chunk默认的名字是模块的路径
+      // /*webpackChunkName:"新名字"*/
       {
         path: '/QA',
         component: () => import(/* webpackChunkName:'base' */ '@/views/QA')
@@ -31,6 +33,10 @@ const routes = [
   {
     path: '/login',
     component: () => import('@/views/login')
+  },
+  {
+    path: '/search',
+    component: () => import('@/views/search')
   }
 ]
 

@@ -7,7 +7,7 @@
     <!-- Loading为true,Load事件不会被触发 -->
     <!-- Loading为false的时候Load事件会被触发 -->
     <!-- Loading会Load事件执行后，被van-List组件自动设置ture,要手动的改为false -->
-    <!-- finished:布尔值.false:load事件会被触发true:load不会被触发，并且显示finished-text的文本 -->
+    <!-- finished:布尔值.false:load事件会被触发,true:load不会被触发，并且显示finished-text的文本 -->
 
     <van-pull-refresh v-model="refreshLoading" @refresh="getNextPageList">
       <van-list
@@ -76,6 +76,7 @@ export default {
     },
     async getNextPageList() {
       try {
+        // 手动抛出一个错误
         // if (Math.random() < 0.5) {
         //   throw new Error()
         // }
@@ -83,7 +84,7 @@ export default {
         const {
           data: { data }
         } = await getArticles(this.id, this.preTime)
-        console.log(data)
+        // console.log(data)
         if (!data.pre_timestamp) {
           this.finished = true
         }

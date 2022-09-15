@@ -1,8 +1,9 @@
 <template>
   <div>
-    <router-view></router-view>
-    <!-- vue测试 -->
-    <!-- <h1>
+    <transition name="van-slide-left" mode="out-in">
+      <router-view></router-view>
+      <!-- vue测试 -->
+      <!-- <h1>
       {{ count }}
       {{ $store.state.count }}
     </h1>
@@ -10,8 +11,9 @@
       {{ bigNum }}
       {{ $store.getters.bigNum }}
     </h1> -->
-    <!-- <button @click="increment">count++</button> -->
-    <!-- <button @click="SetConst(10)">count++</button> -->
+      <!-- <button @click="increment">count++</button> -->
+      <!-- <button @click="SetConst(10)">count++</button> -->
+    </transition>
   </div>
 </template>
 

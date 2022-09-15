@@ -17,3 +17,4 @@ finished:布尔值.false:load事件会被触发true:load不会被发，并且显
 
 逻辑：当下拉至offset设置的值时，会触发@Load绑定的事件，Loading默认值时false，当@Load绑定的事件触发后Loading会自动变为true,需要手动把Loading改为fals,否则不能进行下一次触发
 使用pusg把获取到的数据添加在渲染的后面进行渲染
+
